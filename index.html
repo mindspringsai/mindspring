@@ -29,3 +29,19 @@
   </div>
 </body>
 </html>
+<script>
+(function () {
+  if ("serviceWorker" in navigator) {
+    // avoid infinite reloads
+    if (!localStorage.getItem("sw-reset")) {
+      navigator.serviceWorker.getRegistrations()
+        .then(rs => Promise.all(rs.map(r => r.unregister())))
+        .then(() => {
+          localStorage.setItem("sw-reset", "1");
+          location.reload();
+        })
+        .catch(() => {/* ignore */});
+    }
+  }
+})();
+</script>
