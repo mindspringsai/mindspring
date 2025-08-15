@@ -1,0 +1,16 @@
+﻿node_modules/
+.expo/
+.expo-shared/
+dist/
+build/
+web-build/
+npm-debug.log*
+yarn-error.log*
+.expo-env.local
+.env
+.env.*
+.DS_Store
+Thumbs.db
+android/
+ios/
+*.keystore
